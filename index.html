@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OLOV & TA'M — Eng Mazali Fast Food Restorani</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Loading Animatsiyasi -->
+  <div id="loader" class="loader-wrapper">
+    <div class="loader-content">
+      <div class="burger-spinner">🍔</div>
+      <div class="loader-text">OLOV &amp; TA'M</div>
+      <div class="loader-bar"><span class="loader-progress"></span></div>
+    </div>
+  </div>
+
+  <!-- Toast Bildirishnoma -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <!-- Navbar -->
+  <header id="navbar" class="navbar">
+    <div class="container nav-container">
+      <a href="#home" class="logo">
+        <span class="logo-badge">🔥</span>
+        <span class="logo-text">OLOV <span class="highlight">&amp;</span> TA'M</span>
+      </a>
+
+      <nav id="nav-menu" class="nav-menu">
+        <ul class="nav-list">
+          <li><a href="#home" class="nav-link active">Bosh sahifa</a></li>
+          <li><a href="#menu" class="nav-link">Menyu</a></li>
+          <li><a href="#promos" class="nav-link">Aksiyalar</a></li>
+          <li><a href="#about" class="nav-link">Biz haqimizda</a></li>
+          <li><a href="#contact" class="nav-link">Aloqa</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="cart-open-btn" class="cart-btn" aria-label="Savatchani ochish">
+          <span class="cart-icon">🛒</span>
+          <span class="cart-label">Savatcha</span>
+          <span id="cart-badge" class="cart-badge">0</span>
+        </button>
+
+        <button id="hamburger-btn" class="hamburger-btn" aria-label="Menyuni ochish">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-glow hero-glow-red"></div>
+    <div class="hero-glow hero-glow-yellow"></div>
+
+    <div class="container hero-grid">
+      <div class="hero-content reveal">
+        <div class="hero-badge">⚡ 30 DAQIQADA YETKAZIB BERISH</div>
+        <h1 class="hero-title">MAZALI TA'M — <span class="text-gradient">BIZ BILAN!</span></h1>
+        <p class="hero-subtitle">
+          Eng mazali fast food taomlari endi yanada yaqin! Yangi uzilgan sabzavotlar, 100% halol go'sht va maxsus souslar uyg'unligi.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#menu" class="btn btn-primary">
+            <span>Buyurtma berish</span>
+            <span class="btn-arrow">→</span>
+          </a>
+          <a href="#promos" class="btn btn-outline">
+            <span>Menyuni ko'rish</span>
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <strong class="stat-number">15,000+</strong>
+            <span class="stat-label">Mamnun mijozlar</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <strong class="stat-number">4.9 ★</strong>
+            <span class="stat-label">O'rtacha reyting</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <strong class="stat-number">24/7</strong>
+            <span class="stat-label">Tezkor xizmat</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal">
+        <div class="hero-image-card">
+          <img
+            src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1000&q=85"
+            alt="Maxsus ikki qavatli shirali burger"
+            class="hero-img floating-anim"
+          />
+          <div class="floating-tag tag-top">
+            <span class="tag-emoji">🔥</span>
+            <div>
+              <strong>Xit Sotuv</strong>
+              <small>Double Olov Burger</small>
+            </div>
+          </div>
+          <div class="floating-tag tag-bottom">
+            <span class="tag-emoji">🚀</span>
+            <div>
+              <strong>Issiq holda</strong>
+              <small>Bepul termo-sumkada</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bizning Menyumiz -->
+  <section id="menu" class="section menu-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">LAZZATLI TANLOV</span>
+        <h2 class="section-title">BIZNING <span class="text-yellow">MENYUMIZ</span></h2>
+        <p class="section-desc">O'zingizga yoqqan taomni tanlang, qidiring yoki kategoriya bo'yicha saralang</p>
+      </div>
+
+      <!-- Qidiruv va Filtr Paneli -->
+      <div class="menu-controls reveal">
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Taom nomini yozing (masalan: Burger, Lavash, Pizza)..."
+            autocomplete="off"
+          />
+          <button id="clear-search" class="clear-search-btn" title="Tozalash" style="display: none;">✕</button>
+        </div>
+
+        <div id="category-filters" class="category-filters">
+          <button class="filter-btn active" data-category="all">Barchasi</button>
+          <button class="filter-btn" data-category="burger">🍔 Burger</button>
+          <button class="filter-btn" data-category="lavash">🌯 Lavash</button>
+          <button class="filter-btn" data-category="pizza">🍕 Pizza</button>
+          <button class="filter-btn" data-category="hotdog">🌭 Hot-dog</button>
+          <button class="filter-btn" data-category="fries">🍟 Kartoshka fri</button>
+          <button class="filter-btn" data-category="nuggets">🍗 Nuggets</button>
+          <button class="filter-btn" data-category="sandwich">🥪 Sendvich</button>
+          <button class="filter-btn" data-category="drinks">🥤 Ichimliklar</button>
+        </div>
+      </div>
+
+      <!-- Mahsulotlar Ro'yxati (JS orqali yuklanadi) -->
+      <div id="menu-grid" class="menu-grid"></div>
+
+      <!-- Qidiruv natijasi topilmaganda -->
+      <div id="empty-menu-state" class="empty-state" style="display: none;">
+        <div class="empty-icon">🍽️</div>
+        <h3>Afsuski, bunday taom topilmadi</h3>
+        <p>Boshqa kalit so'z bilan qidirib ko'ring yoki barcha kategoriyalarni tanlang.</p>
+        <button id="reset-filters-btn" class="btn btn-primary">Barcha taomlarni ko'rish</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Aksiyalar Bo'limi -->
+  <section id="promos" class="section promo-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag tag-red">CHEGIRMALAR VA SETLAR</span>
+        <h2 class="section-title">MAXSUS <span class="text-red">AKSIYALAR</span></h2>
+        <p class="section-desc">Cheklangan vaqt ichida amal qiluvchi eng foydali kombo va chegirmalar</p>
+      </div>
+
+      <div id="promo-grid" class="promo-grid"></div>
+    </div>
+  </section>
+
+  <!-- Biz Haqimizda -->
+  <section id="about" class="section about-section">
+    <div class="container about-grid">
+      <div class="about-image-wrap reveal">
+        <img
+          src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=900&q=85"
+          alt="Olov va Ta'm oshxonasi"
+          class="about-img"
+        />
+        <div class="experience-badge">
+          <span class="exp-years">7+</span>
+          <span class="exp-text">Yillik tajriba va sifat kafolati</span>
+        </div>
+      </div>
+
+      <div class="about-content reveal">
+        <span class="section-tag">BIZ HAQIMIZDA</span>
+        <h2 class="section-title">NEGA AYNAN <span class="text-yellow">OLOV &amp; TA'M?</span></h2>
+        <p class="about-lead">
+          Biz 2019-yildan beri mijozlarimizga jahon standartlari darajasidagi tezkor va halol taomlarni taqdim etib kelmoqdamiz. Har bir buyurtma faqat siz buyurtma berganingizdan so'ng yangi masalliqlardan tayyorlanadi.
+        </p>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">🥩</div>
+            <div>
+              <h4>Sifatli mahsulotlar</h4>
+              <p>100% saralangan halol go'sht va kunlik yangi non mahsulotlari.</p>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <div>
+              <h4>Tez yetkazib berish</h4>
+              <p>Shahar bo'ylab o'rtacha 25–35 daqiqada issiq holda yetkazamiz.</p>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">👨‍🍳</div>
+            <div>
+              <h4>Mazali taomlar</h4>
+              <p>Maxsus mualliflik souslari va tajribali oshpazlar retsepti.</p>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">❤️</div>
+            <div>
+              <h4>Mijozlar mamnuniyati</h4>
+              <p>Har bir mijoz fikri biz uchun qadrli va 24/7 qo'llab-quvvatlash mavjud.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mijozlar Fikri -->
+  <section id="testimonials" class="section testimonials-section">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">MIJOZLARIMIZ FIKRI</span>
+        <h2 class="section-title">ULAR BIZNI <span class="text-yellow">TANLASHADI</span></h2>
+        <p class="section-desc">Doimiy mijozlarimizning samimiy izohlari va baholari</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <article class="testimonial-card reveal">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">
+            "Double Olov Burger shunchaki dahshat! Go'shti juda shirali, sousi esa o'zgacha ta'm beradi. 25 daqiqada issiq holda yetkazib berishdi."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">AK</div>
+            <div>
+              <h5>Azizbek Karimov</h5>
+              <span>Doimiy mijoz • Toshkent</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="testimonial-card reveal">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">
+            "Oilamiz bilan har hafta oxiri Pepperoni Pizza va Kombo set buyurtma qilamiz. Narxlari hamyonbop, sifati esa yuqori darajada!"
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar avatar-red">MR</div>
+            <div>
+              <h5>Madina Rahmonova</h5>
+              <span>Doimiy mijoz • Andijon</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="testimonial-card reveal">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">
+            "Tandir Lavash va kartoshka frisi judayam mazali. Sayt orqali buyurtma berish juda oson va qulay ekan, hammaga tavsiya qilaman."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar avatar-dark">JT</div>
+            <div>
+              <h5>Jasurbek To'xtayev</h5>
+              <span>Doimiy mijoz • Samarqand</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer va Aloqa -->
+  <footer id="contact" class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#home" class="logo">
+          <span class="logo-badge">🔥</span>
+          <span class="logo-text">OLOV <span class="highlight">&amp;</span> TA'M</span>
+        </a>
+        <p class="footer-desc">
+          O'zbekistondagi eng zamonaviy va tezkor fast food tarmog'i. Har bir luqmada haqiqiy lazzat va yuqori sifatni his eting!
+        </p>
+        <div class="social-links">
+          <a href="https://t.me" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Telegram">
+            ✈️ Telegram
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram">
+            📸 Instagram
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <h4>Sayt bo'limlari</h4>
+        <ul>
+          <li><a href="#home">Bosh sahifa</a></li>
+          <li><a href="#menu">Bizning menyumiz</a></li>
+          <li><a href="#promos">Aksiyalar va chegirmalar</a></li>
+          <li><a href="#about">Biz haqimizda</a></li>
+          <li><a href="#testimonials">Mijozlar fikri</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Aloqa ma'lumotlari</h4>
+        <ul>
+          <li>📞 <a href="tel:+998901234567">+998 (90) 123-45-67</a></li>
+          <li>✈️ <a href="https://t.me" target="_blank" rel="noopener noreferrer">@olovvatam_uz</a></li>
+          <li>📸 <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">@olovvatam.official</a></li>
+          <li>📍 Toshkent sh., Amir Temur shoh ko'chasi, 45-uy</li>
+          <li>🕒 Ish vaqti: Har kuni 24/7 (Dam olish kunlarisiz)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2026 OLOV &amp; TA'M Fast Food. Barcha huquqlar himoyalangan.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Savatcha Drawer (Yon panel) -->
+  <div id="cart-overlay" class="overlay"></div>
+  <aside id="cart-drawer" class="cart-drawer" aria-label="Savatcha">
+    <div class="cart-header">
+      <h3>🛒 Sizning savatchangiz</h3>
+      <button id="cart-close-btn" class="close-btn" aria-label="Yopish">✕</button>
+    </div>
+
+    <div id="cart-items-container" class="cart-items">
+      <!-- Savat elementlari JS orqali chiqadi -->
+    </div>
+
+    <div id="cart-footer" class="cart-footer">
+      <div class="cart-summary-row">
+        <span>Yetkazib berish:</span>
+        <span class="free-delivery">Bepul</span>
+      </div>
+      <div class="cart-summary-row total-row">
+        <span>Umumiy summa:</span>
+        <strong id="cart-total-price">0 so'm</strong>
+      </div>
+      <button id="checkout-open-btn" class="btn btn-primary btn-block">
+        Buyurtma berish →
+      </button>
+    </div>
+  </aside>
+
+  <!-- Buyurtmani Rasmiylashtirish Modal -->
+  <div id="order-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="order-modal-title">
+    <div class="modal-box">
+      <button id="order-modal-close" class="close-btn modal-close" aria-label="Yopish">✕</button>
+
+      <!-- Buyurtma Formasi -->
+      <div id="order-form-view">
+        <div class="modal-header">
+          <span class="section-tag">TEZKOR RASMIYLASHTIRISH</span>
+          <h3 id="order-modal-title">Buyurtma ma'lumotlari</h3>
+          <p>Ma'lumotlaringizni kiriting, operatorimiz darhol bog'lanadi.</p>
+        </div>
+
+        <form id="order-form" novalidate>
+          <div class="form-group">
+            <label for="customer-name">Ism va familiya *</label>
+            <input type="text" id="customer-name" placeholder="Masalan: Sardor Aliyev" required />
+            <small class="error-msg" id="name-error"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="customer-phone">Telefon raqami *</label>
+            <input type="tel" id="customer-phone" placeholder="+998 90 123 45 67" required />
+            <small class="error-msg" id="phone-error"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="customer-address">Yetkazib berish manzili *</label>
+            <input type="text" id="customer-address" placeholder="Tuman, ko'cha, uy va xonadon raqami" required />
+            <small class="error-msg" id="address-error"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="order-note">Buyurtma izohi (ixtiyoriy)</label>
+            <textarea id="order-note" rows="3" placeholder="Masalan: Achchiq sous qo'shilsin, domofon kodi 123..."></textarea>
+          </div>
+
+          <div class="order-modal-summary">
+            <span>To'lov miqdori:</span>
+            <strong id="modal-total-amount">0 so'm</strong>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">
+            ✅ Buyurtmani tasdiqlash
+          </button>
+        </form>
+      </div>
+
+      <!-- Muvaffaqiyatli Buyurtma Xabari -->
+      <div id="order-success-view" class="success-view" style="display: none;">
+        <div class="success-checkmark">✓</div>
+        <h3>Buyurtmangiz qabul qilindi!</h3>
+        <p id="success-message-text">
+          Rahmat! Buyurtmangiz oshxonaga yuborildi va 30 daqiqa ichida yetkazib beriladi.
+        </p>
+        <div class="order-receipt" id="order-receipt"></div>
+        <button id="success-done-btn" class="btn btn-primary btn-block">Ajoyib, rahmat!</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
